@@ -3,7 +3,15 @@ for ( let i = 0; i < 63; i++){
     div.style.width = '11.1%';
     div.style.paddingBottom = '11.1%';
     div.style.float = 'left';
-    div.style.backgroundColor = i % 2 === 0 ? 'black' : 'red';
+    div.style.backgroundColor = randomColor();// call randomColor function;
     document.body.append(div);
 }
-   
+
+function randomColor(){
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for ( let i = 0; i <6; i ++){
+        color += letters[Math.floor(Math.random() * 16)]
+    }
+    return color;
+}
